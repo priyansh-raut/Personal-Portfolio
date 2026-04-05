@@ -19,7 +19,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      
+
       const sections = navItems.map(item => document.getElementById(item.id));
       const scrollPosition = window.scrollY + 100;
 
@@ -49,21 +49,20 @@ const Navbar = () => {
               <Code2 className="text-blue-500 group-hover:text-purple-400 transition-colors" size={28} />
             </motion.div>
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-              Priya's Portfolio
+              Priyansh's Portfolio
             </span>
           </a>
-          
+
           <div className="hidden lg:flex space-x-1">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={`#${item.id}`}
                 onClick={() => setActiveTab(item.id)}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-                  activeTab === item.id
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${activeTab === item.id
                     ? 'bg-slate-800 text-blue-400 shadow-sm'
                     : 'text-slate-300 hover:bg-slate-800/50 hover:text-white'
-                }`}
+                  }`}
               >
                 {item.icon}
                 <span>{item.name}</span>
@@ -72,7 +71,7 @@ const Navbar = () => {
           </div>
 
           <div className="lg:hidden flex items-center">
-            <button 
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-slate-300 p-2 focus:outline-none"
             >
@@ -93,11 +92,10 @@ const Navbar = () => {
                   setActiveTab(item.id);
                   setMobileMenuOpen(false);
                 }}
-                className={`flex items-center gap-2 px-3 py-3 rounded-md text-base font-medium ${
-                  activeTab === item.id
+                className={`flex items-center gap-2 px-3 py-3 rounded-md text-base font-medium ${activeTab === item.id
                     ? 'bg-slate-800 text-blue-400'
                     : 'text-slate-300 hover:bg-slate-800/50'
-                }`}
+                  }`}
               >
                 {item.icon}
                 <span>{item.name}</span>
